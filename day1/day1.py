@@ -9,9 +9,7 @@ def day1_pt1(puzzle_in):
     left.sort()
     right.sort()
 
-    s = 0
-    for l, r in zip(left, right):
-        s += abs(l - r)
+    s = sum(abs(l-r) for l, r in zip(left, right))
 
     return s
 
@@ -24,9 +22,7 @@ def day1_pt2(puzzle_in):
 
     counts_right = Counter(right)
 
-    s = 0
-    for v in left:
-        s += counts_right[v] * v
+    s = sum(counts_right[v] * v for v in left)
 
     return s
 
