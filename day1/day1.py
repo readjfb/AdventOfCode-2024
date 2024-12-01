@@ -9,9 +9,7 @@ def day1_pt1(puzzle_in):
     left.sort()
     right.sort()
 
-    s = sum(abs(l-r) for l, r in zip(left, right))
-
-    return s
+    return sum(abs(l-r) for l, r in zip(left, right))
 
 
 def day1_pt2(puzzle_in):
@@ -22,9 +20,7 @@ def day1_pt2(puzzle_in):
 
     counts_right = Counter(right)
 
-    s = sum(counts_right[v] * v for v in left)
-
-    return s
+    return sum(counts_right[v] * v for v in left)
 
 if __name__ == "__main__":
     with open("AdventOfCode-2024/day1/day1_input.txt") as file:
