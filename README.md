@@ -1,7 +1,7 @@
 # AdventOfCode-2024
 
 ### Language
-Solutons will be done in python
+Solutons will be done in Python
 
 ### Goals
 - Goal of completing each day in < 1s
