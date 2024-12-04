@@ -36,11 +36,19 @@ I hadn't used the `|` (or) command in Python regex extensively before, and didn'
 Regex is really fast though; both part 1 and part 2 only take 1ms to run.
 
 
+## Day 4
+I lost track of time, and started late. I wrote a pretty basic, naive solution, that to my luck was really easy to convert to a solution for part 2! However, I had a really annoying bug on part 1, where I was incorrectly checking to see if a given position was out of bounds. This took me about 10 minutes to find, and was quite frustrating. I feel like I could have done a lot better, but after working to refine and optimize my code, I have a runtime of 11ms for parts 1 and 2 together, which I'm pretty happy with.
+
+I also had some fun looking at other people's solutions (after finishing mine), and saw that you can actually use `j` as the imaginary number `i` to perform multiplication in Python. This can make cycling through lists of directions on the unit circle a lot easier, potentially.
+
+Unfortunately, I fell on several of the AOC leaderboards I'm competing on due to my slow time today. Hopefully, I'll be able to pick it up tomorrow, and get some more fast times.
+
 ### Results Table (rank refers to global leaderboard)
 | Day   | Part 1 Time | Part 1 Rank | Part 1 Runtime (ms) | Part 2 Time | Part 2 Rank | Part 2 Runtime (ms) |
 | ----- | ----------- | ----------- | ------------------- | ----------- | ----------- | ------------------- |
 | Day 1 | 00:03:16    | 903         | 1                   | 00:04:53    | 719         | 1                   |
 | Day 2 | 00:03:44    | 203         | 2                   | 00:10:50    | 961         | 6                   |
 | Day 3 | 00:03:25    | 717         | 1                   | 00:12:58    | 1784        | 1                   |
+| Day 4 | 00:32:12    | 6577        | 2                   | 00:33:01    | 3911        | 9                   |
 
-**I did use an LLM to generate this markdown table, because why not
+** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on my M4 Laptop
