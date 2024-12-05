@@ -43,6 +43,12 @@ I also had some fun looking at other people's solutions (after finishing mine), 
 
 Unfortunately, I fell on several of the AOC leaderboards I'm competing on due to my slow time today. Hopefully, I'll be able to pick it up tomorrow, and get some more fast times.
 
+
+## Day 5
+I was pretty happy with how I did today! I wrote some fairly simple logic using basic loops and comparing indices for part 1 that was enough to solve the part. For part 2, I sorted each incorrect list by swapping incorect elements until the list was sorted (swap sort). I'm sure that there's a more refined algorithm that could be used, but for now I'm happy with my solution.
+
+I still haven't looked up others' solutions, and have not used an LLM for any of my code. And, I made it back to the sub 1000 ranks today!
+
 ### Results Table (rank refers to global leaderboard)
 | Day   | Part 1 Time | Part 1 Rank | Part 1 Runtime (ms) | Part 2 Time | Part 2 Rank | Part 2 Runtime (ms) |
 | ----- | ----------- | ----------- | ------------------- | ----------- | ----------- | ------------------- |
@@ -50,5 +56,6 @@ Unfortunately, I fell on several of the AOC leaderboards I'm competing on due to
 | Day 2 | 00:03:44    | 203         | 2                   | 00:10:50    | 961         | 6                   |
 | Day 3 | 00:03:25    | 717         | 1                   | 00:12:58    | 1784        | 1                   |
 | Day 4 | 00:32:12    | 6577        | 2                   | 00:33:01    | 3911        | 9                   |
+| Day 5 | 00:07:24    | 732         | 10                  | 00:15:51    | 991         | 23                  |
 
 ** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on my M4 Laptop
