@@ -10,7 +10,7 @@ Solutions will be completed in Python 3.13
 
 ## Self Rules
 1. No LLM/Copilot use
-2. No looking at outside solutions for the first hour(s) of effort
+2. No looking at outside solutions (until I get a solution)
 
 # Journal (Spoiler Alert)
 
