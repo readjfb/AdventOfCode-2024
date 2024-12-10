@@ -50,12 +50,18 @@ I was pretty happy with how I did today! I wrote some fairly simple logic using 
 I still haven't looked up others' solutions, and have not used an LLM for any of my code. And, I made it back to the sub 1000 ranks today!
 
 ### Results Table (rank refers to global leaderboard)
-| Day   | Part 1 Time | Part 1 Rank | Part 1 Runtime (ms) | Part 2 Time | Part 2 Rank | Part 2 Runtime (ms) |
-| ----- | ----------- | ----------- | ------------------- | ----------- | ----------- | ------------------- |
-| Day 1 | 00:03:16    | 903         | 1                   | 00:04:53    | 719         | 1                   |
-| Day 2 | 00:03:44    | 203         | 2                   | 00:10:50    | 961         | 6                   |
-| Day 3 | 00:03:25    | 717         | 1                   | 00:12:58    | 1784        | 1                   |
-| Day 4 | 00:32:12    | 6577        | 2                   | 00:33:01    | 3911        | 9                   |
-| Day 5 | 00:07:24    | 732         | 10                  | 00:15:51    | 991         | 23                  |
+| Day | Startup (ms) | Part 1 (ms) | Part 2 (ms) | Total (ms) | Part 1 Time | Part 1 Rank | Part 2 Time | Part 2 Rank |
+| --- | ------------ | ----------- | ----------- | ---------- | ----------- | ----------- | ----------- | ----------- |
+| 1   | 10.24        | 0.30        | 0.31        | 10.85      | 00:03:16    | 903         | 00:04:53    | 719         |
+| 2   | 7.66         | 0.59        | 1.84        | 10.09      | 00:03:44    | 203         | 00:10:50    | 961         |
+| 3   | 9.88         | 0.19        | 0.34        | 10.41      | 00:03:25    | 717         | 00:12:58    | 1784        |
+| 4   | 7.60         | 6.14        | 1.36        | 15.10      | 00:32:12    | 6577        | 00:33:01    | 3911        |
+| 5   | 7.94         | 4.13        | 7.95        | 20.02      | 00:07:24    | 732         | 00:15:51    | 991         |
+| 6   | 9.13         | 1.47        | 2453.42     | 2464.02    | 08:54:25    | 40244       | 12:21:08    | 29742       |
+| 7   | 15.72        | 161.72      | 236.76      | 414.20     | 00:12:28    | 2052        | 00:14:53    | 1444        |
+| 8   | 12.18        | 0.48        | 0.27        | 12.93      | 21:46:04    | 46716       | 22:43:23    | 44791       |
+| 9   | 8.67         | 6.17        | 7.42        | 22.26      | 00:25:04    | 2885        | 01:12:45    | 3349        |
+| 10  | 7.95         | 3.44        | 2.71        | 14.10      | 00:37:06    | 5689        | 00:39:18    | 5005        |
 
-** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on my M4 Laptop
+
+** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on M4 MacBook Pro

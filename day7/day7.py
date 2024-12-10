@@ -78,6 +78,6 @@ if __name__ == "__main__":
     with open("AdventOfCode-2024/day7/day7_input.txt") as file:
         puzzle_in = [x.strip() for x in file.readlines()]
 
+    print("Starting")
     print(f"The solution to 7.1 is {day7_pt1(puzzle_in)}")
-
     print(f"The solution to 7.2 is {day7_pt2(puzzle_in)}")

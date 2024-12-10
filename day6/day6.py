@@ -106,12 +106,11 @@ def day6_pt2(puzzle_in):
     return count
 
 
-
-
 if __name__ == "__main__":
     with open("AdventOfCode-2024/day6/day6_input.txt") as file:
         puzzle_in = [x.strip() for x in file.readlines()]
 
+    print("Starting")
     print(f"The solution to 6.1 is {day6_pt1(puzzle_in)}")
 
     print(f"The solution to 6.2 is {day6_pt2(puzzle_in)}")

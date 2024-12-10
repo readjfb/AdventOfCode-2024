@@ -26,5 +26,6 @@ if __name__ == "__main__":
     with open("AdventOfCode-2024/day1/day1_input.txt") as file:
         puzzle_in = [x.strip() for x in file.readlines()]
 
+    print("Starting")
     print(f"The solution to 1.1 is {day1_pt1(puzzle_in)}")
     print(f"The solution to 1.2 is {day1_pt2(puzzle_in)}")
