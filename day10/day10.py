@@ -1,9 +1,3 @@
-def print_board(b):
-    for r in b:
-        print("".join(str(len(x)) for x in r))
-    print()
-
-
 def day10_pt1(puzzle_in):
     puzzle = [[int(x) for x in y] for y in puzzle_in]
 
