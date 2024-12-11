@@ -49,19 +49,31 @@ I was pretty happy with how I did today! I wrote some fairly simple logic using 
 
 I still haven't looked up others' solutions, and have not used an LLM for any of my code. And, I made it back to the sub 1000 ranks today!
 
+## got lazy and didn't want to write
+
+## Day 11
+Part 1 was super easy- just a loop and some logic! I got it pretty quickly, but it took me some time to actually type out, and I think I started a minute late.
+
+Part 2 was really hard- I tried a bunch of methods, including multiprocessing the brute force, but my laptop kept running out of memory! I also tried caching the forward paths for each stone, but this was incredibly slow, and again, laptop ran out of application memory (I have 48 GB). Then, I realized that all we care about is the number of stones, so we can do a DFS to find the number of stones, and by caching the result can make everything faster.
+
+Also, while I was trying different solutions, I wrote out a quick function to count the number of digits using arithmetic. I don't know if this is actually faster, but it looks cooler, and I don't have to use janky string parsing for once.
+
+I'm pretty happy that I got it in (almost) under 1 hour, and the runtime is fast! It could be even faster, but my solution for P1 ran with no bugs the first time I tried it, so I'm leaving it in there (the 58ms rute force solution could be cut to around 10ms if I used the smart solution). I did format and cleanup the code, though.
+
 ### Results Table (rank refers to global leaderboard)
-| Day | Startup (ms) | Part 1 (ms) | Part 2 (ms) | Total (ms) | Part 1 Time | Part 1 Rank | Part 2 Time | Part 2 Rank |
-| --- | ------------ | ----------- | ----------- | ---------- | ----------- | ----------- | ----------- | ----------- |
-| 1   | 10.24        | 0.30        | 0.31        | 10.85      | 00:03:16    | 903         | 00:04:53    | 719         |
-| 2   | 7.66         | 0.59        | 1.84        | 10.09      | 00:03:44    | 203         | 00:10:50    | 961         |
-| 3   | 9.88         | 0.19        | 0.34        | 10.41      | 00:03:25    | 717         | 00:12:58    | 1784        |
-| 4   | 7.60         | 6.14        | 1.36        | 15.10      | 00:32:12    | 6577        | 00:33:01    | 3911        |
-| 5   | 7.94         | 4.13        | 7.95        | 20.02      | 00:07:24    | 732         | 00:15:51    | 991         |
-| 6   | 9.13         | 1.47        | 2453.42     | 2464.02    | 08:54:25    | 40244       | 12:21:08    | 29742       |
-| 7   | 15.72        | 161.72      | 236.76      | 414.20     | 00:12:28    | 2052        | 00:14:53    | 1444        |
-| 8   | 12.18        | 0.48        | 0.27        | 12.93      | 21:46:04    | 46716       | 22:43:23    | 44791       |
-| 9   | 8.67         | 6.17        | 7.42        | 22.26      | 00:25:04    | 2885        | 01:12:45    | 3349        |
-| 10  | 7.95         | 3.44        | 2.71        | 14.10      | 00:37:06    | 5689        | 00:39:18    | 5005        |
+| Day | Startup (ms) | Part 1 (ms) | Part 2 (ms) | Total (ms) | Part 1 Time | Part 2 Time |
+| --- | ------------ | ----------- | ----------- | ---------- | ----------- | ----------- |
+| 1   | 10.24        | 0.30        | 0.31        | 10.85      | 00:03:16    | 00:04:53    |
+| 2   | 7.66         | 0.59        | 1.84        | 10.09      | 00:03:44    | 00:10:50    |
+| 3   | 9.88         | 0.19        | 0.34        | 10.41      | 00:03:25    | 00:12:58    |
+| 4   | 7.60         | 6.14        | 1.36        | 15.10      | 00:32:12    | 00:33:01    |
+| 5   | 7.94         | 4.13        | 7.95        | 20.02      | 00:07:24    | 00:15:51    |
+| 6   | 9.13         | 1.47        | 2453.42     | 2464.02    | 08:54:25    | 12:21:08    |
+| 7   | 15.72        | 161.72      | 236.76      | 414.20     | 00:12:28    | 00:14:53    |
+| 8   | 12.18        | 0.48        | 0.27        | 12.93      | 21:46:04    | 22:43:23    |
+| 9   | 8.67         | 6.17        | 7.42        | 22.26      | 00:25:04    | 01:12:45    |
+| 10  | 7.95         | 3.44        | 2.71        | 14.10      | 00:37:06    | 00:39:18    |
+| 11  | 9.51         | 58.12       | 27.08       | 94.71      | 00:06:40    | 01:08:03    |
 
 
-** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on M4 MacBook Pro
+** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on M4 Pro MacBook Pro

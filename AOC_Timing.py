@@ -46,7 +46,7 @@ def measure_script_timing(script_path):
 
 
 if __name__ == "__main__":
-    days = range(1, 10 + 1)
+    days = range(1, 11 + 1)
     n_trials = 3
 
     data = []
