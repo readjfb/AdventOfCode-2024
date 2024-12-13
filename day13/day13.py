@@ -38,13 +38,13 @@ def wrapper_v2(data):
     # (tx * ay) - (b * bx * ay) = (ty * ax) - (b*by * ax)
     # (tx * ay) - (ty * ax) =  - (b*by * ax) + (b * bx * ay)
     # (tx * ay) - (ty * ax) = b * ( - (by * ax) + (bx * ay)
-    B = ((tx*ay) - ty*ax) / ((bx * ay) - (by * ax))
-
-    A = (tx - (B*bx)) / ax
+    B = ((tx * ay) - ty * ax) / ((bx * ay) - (by * ax))
+    A = (tx - (B * bx)) / ax
 
     if round(A, 2) % 1 == 0:
         return (3 * round(A)) + round(B)
     return 0
+
 
 def day13_pt1(puzzle_in):
     # Linear optimization process
@@ -61,9 +61,9 @@ def day13_pt1(puzzle_in):
         except IndexError:
             continue
 
-    button_a = [(int(x), int(y)) for x, y, _, __ in all_res[0::3]]
-    button_b = [(int(x), int(y)) for x, y, _, __ in all_res[1::3]]
-    targets = [(int(x), int(y)) for _, __, x, y  in all_res[2::3]]
+    button_a = [(int(x), int(y)) for x, y, tx, ty in all_res[0::3]]
+    button_b = [(int(x), int(y)) for x, y, tx, ty in all_res[1::3]]
+    targets = [(int(tx), int(ty)) for x, y, tx, ty in all_res[2::3]]
 
     total_cost = 0
     for data in zip(button_a, button_b, targets):
@@ -80,9 +80,9 @@ def day13_pt2(puzzle_in):
             continue
 
     addin = 10000000000000
-    button_a = [(int(x), int(y)) for x, y, _, __ in all_res[0::3]]
-    button_b = [(int(x), int(y)) for x, y, _, __ in all_res[1::3]]
-    targets = [(int(x) + addin, int(y) + addin) for _, __, x, y in all_res[2::3]]
+    button_a = [(int(x), int(y)) for x, y, tx, ty in all_res[0::3]]
+    button_b = [(int(x), int(y)) for x, y, tx, ty in all_res[1::3]]
+    targets = [(int(tx) + addin, int(ty) + addin) for x, y, tx, ty in all_res[2::3]]
 
     total_cost = 0
     for data in zip(button_a, button_b, targets):

@@ -67,10 +67,14 @@ Linear optimization problem! I can't believe that CIV_ENV 304 actually came in h
 
 The longest part of the runtime is the startup/imports at 115ms, part 1 and part 2 are both around 47ms.
 
-UPDATE- I realized that it's a really basic linear problem, since there is at most one solution (according to the problem). So, we can just solve the problem as a two-variable linear equation system, which acts in 0(1) time, compared to the O(?Probably a lot?) timing of the solver. This cut the overall time from 209ms to 11ms, a 94% reduction in time! It also removes the scipy dependency
+UPDATE- I realized after talking about the problem with a friend that it's a really basic linear problem, since there is at most one solution (according to the problem). So, we can just solve the problem as a two-variable linear equation system, which acts in 0(1) time, compared to the O(?Probably a lot?) timing of the solver. This cut the overall time from 209ms to 11ms, a 94% reduction in time! It also removes the scipy dependency.
+
+I still haven't used an LLM to do anything on AOC other than generate the results table or tell me how to fix my Git issues, and have only looked at others' solutions once I've pushed my final code to Git. I think this is the farthest I've ever made it on AOC without cheating/looking at someone else's solutoon.
 
 
-### Results Table (rank refers to global leaderboard)
+### Results Table
+I'm intentionally not including rank, since the use of LLMs means that many people on top of global leaderboard have bot-written code. My highest rank for a star is 203 on Day 2, part 1, which I completed in 3:44.
+
 | Day | Startup (ms) | Part 1 (ms) | Part 2 (ms) | Total (ms) | Part 1 Time | Part 2 Time |
 | --- | ------------ | ----------- | ----------- | ---------- | ----------- | ----------- |
 | 1   | 10.24        | 0.30        | 0.31        | 10.85      | 00:03:16    | 00:04:53    |
