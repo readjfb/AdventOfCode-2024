@@ -2,7 +2,7 @@ import subprocess
 import time
 import pandas as pd
 
-MAX_DAY = 12
+MAX_DAY = 13
 
 
 def measure_script_timing(script_path):

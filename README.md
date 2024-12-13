@@ -60,6 +60,13 @@ Also, while I was trying different solutions, I wrote out a quick function to co
 
 I'm pretty happy that I got it in (almost) under 1 hour, and the runtime is fast! It could be even faster, but my solution for P1 ran with no bugs the first time I tried it, so I'm leaving it in there (the 58ms rute force solution could be cut to around 10ms if I used the smart solution). I did format and cleanup the code, though.
 
+
+## Day 13
+
+Linear optimization problem! I can't believe that CIV_ENV 304 actually came in handy. All of these were very simple linear optimzation problems, and after I fixed an issue with Scipy (it wasn't installed, but pip thought it was), it was easy to use the linear solver to solve the problem. The trickiest part was actually figuring out if the solutions were integers; the integer constraint wasn't working for large values for part 2, so I had to write a custom method to check if the outputs were integers. If they were, I accept the solution, otherwise reject.
+
+The longest part of the runtime is the startup/imports at 115ms, part 1 and part 2 are both around 47ms.
+
 ### Results Table (rank refers to global leaderboard)
 | Day | Startup (ms) | Part 1 (ms) | Part 2 (ms) | Total (ms) | Part 1 Time | Part 2 Time |
 | --- | ------------ | ----------- | ----------- | ---------- | ----------- | ----------- |
@@ -75,6 +82,6 @@ I'm pretty happy that I got it in (almost) under 1 hour, and the runtime is fast
 | 10  | 7.95         | 3.44        | 2.71        | 14.10      | 00:37:06    | 00:39:18    |
 | 11  | 9.51         | 58.12       | 27.08       | 94.71      | 00:06:40    | 01:08:03    |
 | 12  | 9.19         | 17.71       | 24.01       | 47.91      | 00:22:57    | 20:17:40    |
-
+| 13  | 115.90       | 47.12       | 46.94       | 209.97     | 00:26:05    | 00:32:38    |
 
 ** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on M4 Pro MacBook Pro
