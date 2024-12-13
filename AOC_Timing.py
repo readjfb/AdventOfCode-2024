@@ -2,6 +2,8 @@ import subprocess
 import time
 import pandas as pd
 
+MAX_DAY = 12
+
 
 def measure_script_timing(script_path):
     sector_times_ms = []
@@ -46,7 +48,7 @@ def measure_script_timing(script_path):
 
 
 if __name__ == "__main__":
-    days = range(1, 11 + 1)
+    days = range(1, MAX_DAY + 1)
     n_trials = 3
 
     data = []

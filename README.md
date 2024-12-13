@@ -74,6 +74,7 @@ I'm pretty happy that I got it in (almost) under 1 hour, and the runtime is fast
 | 9   | 8.67         | 6.17        | 7.42        | 22.26      | 00:25:04    | 01:12:45    |
 | 10  | 7.95         | 3.44        | 2.71        | 14.10      | 00:37:06    | 00:39:18    |
 | 11  | 9.51         | 58.12       | 27.08       | 94.71      | 00:06:40    | 01:08:03    |
+| 12  | 9.19         | 17.71       | 24.01       | 47.91      | 00:22:57    | 20:17:40    |
 
 
 ** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on M4 Pro MacBook Pro
