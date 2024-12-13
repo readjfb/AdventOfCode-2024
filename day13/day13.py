@@ -1,25 +1,48 @@
-from scipy.optimize import linprog
 from re import findall
 
-def wrapper(data):
+# from scipy.optimize import linprog
+# def wrapper(data):
+#     (ax, ay), (bx, by), (tx, ty) = data
+
+#     A_eq = [[ax, bx],
+#             [ay, by]]
+#     b_eq = [tx, ty]
+
+#     bounds = [(0, None),
+#               (0, None)]  # A >= 0  # B >= 0
+
+#     cost = [3, 1]
+
+#     result = linprog(cost, A_eq=A_eq, b_eq=b_eq, bounds=bounds)
+
+#     if not result.success:
+#         return 0
+#     A, B = result.x
+
+#     if round(A, 3) % 1 == 0:
+#         return (3 * round(A)) + round(B)
+#     return 0
+
+
+def wrapper_v2(data):
     (ax, ay), (bx, by), (tx, ty) = data
 
-    A_eq = [[ax, bx],
-            [ay, by]]
-    b_eq = [tx, ty]
+    # a*ax + b*bx = tx
+    # a*ay + b*by = ty
 
-    bounds = [(0, None),
-              (0, None)]  # A >= 0  # B >= 0
+    # a = (tx - b*bx) / ax
+    # a = (ty - b*by) / ay
 
-    cost = [3, 1]
+    # (tx - b * bx) / ax = (ty - b*by) / ay
+    # (tx - b * bx) * ay = (ty - b*by) * ax
+    # (tx * ay) - (b * bx * ay) = (ty * ax) - (b*by * ax)
+    # (tx * ay) - (ty * ax) =  - (b*by * ax) + (b * bx * ay)
+    # (tx * ay) - (ty * ax) = b * ( - (by * ax) + (bx * ay)
+    B = ((tx*ay) - ty*ax) / ((bx * ay) - (by * ax))
 
-    result = linprog(cost, A_eq=A_eq, b_eq=b_eq, bounds=bounds)
+    A = (tx - (B*bx)) / ax
 
-    if not result.success:
-        return 0
-    A, B = result.x
-
-    if round(A, 3) % 1 == 0:
+    if round(A, 2) % 1 == 0:
         return (3 * round(A)) + round(B)
     return 0
 
@@ -38,13 +61,13 @@ def day13_pt1(puzzle_in):
         except IndexError:
             continue
 
-    button_a = [(x, y) for x, y, _, __ in all_res[0::3]]
-    button_b = [(x, y) for x, y, _, __ in all_res[1::3]]
-    targets = [(x, y) for _, __, x, y  in all_res[2::3]]
+    button_a = [(int(x), int(y)) for x, y, _, __ in all_res[0::3]]
+    button_b = [(int(x), int(y)) for x, y, _, __ in all_res[1::3]]
+    targets = [(int(x), int(y)) for _, __, x, y  in all_res[2::3]]
 
     total_cost = 0
     for data in zip(button_a, button_b, targets):
-        total_cost += wrapper(data)
+        total_cost += wrapper_v2(data)
     return total_cost
 
 
@@ -57,13 +80,13 @@ def day13_pt2(puzzle_in):
             continue
 
     addin = 10000000000000
-    button_a = [(x, y) for x, y, _, __ in all_res[0::3]]
-    button_b = [(x, y) for x, y, _, __ in all_res[1::3]]
+    button_a = [(int(x), int(y)) for x, y, _, __ in all_res[0::3]]
+    button_b = [(int(x), int(y)) for x, y, _, __ in all_res[1::3]]
     targets = [(int(x) + addin, int(y) + addin) for _, __, x, y in all_res[2::3]]
 
     total_cost = 0
     for data in zip(button_a, button_b, targets):
-        total_cost += wrapper(data)
+        total_cost += wrapper_v2(data)
     return total_cost
 
 

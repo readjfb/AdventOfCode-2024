@@ -67,6 +67,9 @@ Linear optimization problem! I can't believe that CIV_ENV 304 actually came in h
 
 The longest part of the runtime is the startup/imports at 115ms, part 1 and part 2 are both around 47ms.
 
+UPDATE- I realized that it's a really basic linear problem, since there is at most one solution (according to the problem). So, we can just solve the problem as a two-variable linear equation system, which acts in 0(1) time, compared to the O(?Probably a lot?) timing of the solver. This cut the overall time from 209ms to 11ms, a 94% reduction in time! It also removes the scipy dependency
+
+
 ### Results Table (rank refers to global leaderboard)
 | Day | Startup (ms) | Part 1 (ms) | Part 2 (ms) | Total (ms) | Part 1 Time | Part 2 Time |
 | --- | ------------ | ----------- | ----------- | ---------- | ----------- | ----------- |
@@ -82,6 +85,6 @@ The longest part of the runtime is the startup/imports at 115ms, part 1 and part
 | 10  | 7.95         | 3.44        | 2.71        | 14.10      | 00:37:06    | 00:39:18    |
 | 11  | 9.51         | 58.12       | 27.08       | 94.71      | 00:06:40    | 01:08:03    |
 | 12  | 9.19         | 17.71       | 24.01       | 47.91      | 00:22:57    | 20:17:40    |
-| 13  | 115.90       | 47.12       | 46.94       | 209.97     | 00:26:05    | 00:32:38    |
+| 13  | 10.39        | 0.85        | 0.52        | 11.76      | 00:26:05    | 00:32:38    |
 
 ** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on M4 Pro MacBook Pro
