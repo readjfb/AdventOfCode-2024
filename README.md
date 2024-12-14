@@ -72,6 +72,12 @@ UPDATE- I realized after talking about the problem with a friend that it's a rea
 I still haven't used an LLM to do anything on AOC other than generate the results table or tell me how to fix my Git issues, and have only looked at others' solutions once I've pushed my final code to Git. I think this is the farthest I've ever made it on AOC without cheating/looking at someone else's solutoon.
 
 
+## Day 14
+Even though I started late, part 1 was pretty straightforward - I just applied a distance formula, with mod to keep it on the screen. Part 2 was a lot harder -> I first looked all over the website, looking for a christmas tree. But, I couldnt find one. I then tried to print out the pictures to both the console and a file, but tried scrolling through the first 2500, and couldn't zoom far enough out to see anything.
+
+I was wondering if it was a puzzle where we had to find unique locations, and after finding the first instance where all robots are on different locations, I found that I had the correct answer.
+
+
 ### Results Table
 I'm intentionally not including rank, since the use of LLMs means that many people on top of global leaderboard have bot-written code. My highest rank for a star is 203 on Day 2, part 1, which I completed in 3:44.
 
@@ -90,5 +96,6 @@ I'm intentionally not including rank, since the use of LLMs means that many peop
 | 11  | 9.51         | 58.12       | 27.08       | 94.71      | 00:06:40    | 01:08:03    |
 | 12  | 9.19         | 17.71       | 24.01       | 47.91      | 00:22:57    | 20:17:40    |
 | 13  | 10.39        | 0.85        | 0.52        | 11.76      | 00:26:05    | 00:32:38    |
+| 14  | 11.45        | 0.53        | 102.55      | 114.53     | 00:25:05    | 00:34:30    |
 
 ** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on M4 Pro MacBook Pro
