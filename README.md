@@ -78,6 +78,10 @@ Even though I started late, part 1 was pretty straightforward - I just applied a
 I was wondering if it was a puzzle where we had to find unique locations, and after finding the first instance where all robots are on different locations, I found that I had the correct answer.
 
 
+## Day 15
+This day was pretty straightforward, and while I started about an hour late, part 1 was pretty easy. Part 2 was a bit more complicated, but I definitely could have gotten it faster if I hadn't been distracted. The logic to sort through boxes to move was a bit tricky, but not to hard.
+
+
 ### Results Table
 I'm intentionally not including rank, since the use of LLMs means that many people on top of global leaderboard have bot-written code. My highest rank for a star is 203 on Day 2, part 1, which I completed in 3:44.
 
@@ -97,5 +101,6 @@ I'm intentionally not including rank, since the use of LLMs means that many peop
 | 12  | 9.19         | 17.71       | 24.01       | 47.91      | 00:22:57    | 20:17:40    |
 | 13  | 10.39        | 0.85        | 0.52        | 11.76      | 00:26:05    | 00:32:38    |
 | 14  | 11.45        | 0.53        | 102.55      | 114.53     | 00:25:05    | 00:34:30    |
+| 15  | 8.95         | 1.63        | 4.04        | 14.62      | 01:12:12    | 02:21:44    |
 
 ** I write each part to execute separately. Even if it would be faster to solve both parts simultaenously, I'm choosing to evaluate them separately. Runtimes are evaluated on M4 Pro MacBook Pro
