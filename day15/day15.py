@@ -7,37 +7,29 @@ def print_grid(grid):
 def day15_pt1(puzzle_in):
     grid = []
 
-    x = None
-    y = None
     i = 0
     while puzzle_in[i]:
         grid.append([x for x in puzzle_in[i]])
 
         if "@" in puzzle_in[i]:
-            y = i
-            x = puzzle_in[i].index("@")
+            x, y = puzzle_in[i].index("@"), i
         i += 1
     i += 1
 
     moves = []
     while i < len(puzzle_in):
         moves += [x for x in puzzle_in[i]]
-
         i += 1
 
+    move_dict = {
+        "<": (-1, 0),
+        ">": (1, 0),
+        "^": (0, -1),
+        "v": (0, 1),
+    }
+
     for move in moves:
-        if move == "<":
-            dx = -1
-            dy = 0
-        elif move == ">":
-            dx = 1
-            dy = 0
-        elif move == "^":
-            dx = 0
-            dy = -1
-        elif move == "v":
-            dx = 0
-            dy = 1
+        dx, dy = move_dict[move]
 
         if grid[y + dy][x + dx] == ".":
             grid[y + dy][x + dx] = "@"
@@ -59,11 +51,6 @@ def day15_pt1(puzzle_in):
                 grid[y][x] = "."
                 x += dx
                 y += dy
-            else:
-                print("Something went wrong 1")
-
-        else:
-            print(move, grid[y + dy][x + dx], "Something went wrong 2")
 
     total = 0
     for y in range(len(grid)):
@@ -76,8 +63,6 @@ def day15_pt1(puzzle_in):
 def day15_pt2(puzzle_in):
     grid = []
 
-    x = None
-    y = None
     i = 0
     while puzzle_in[i]:
         next_row = []
@@ -90,8 +75,7 @@ def day15_pt2(puzzle_in):
                 next_row += [v] * 2
 
         if "@" in next_row:
-            x = next_row.index("@")
-            y = i
+            x, y = next_row.index("@"), i
 
         grid.append(next_row)
         i += 1
@@ -100,18 +84,17 @@ def day15_pt2(puzzle_in):
     moves = []
     while i < len(puzzle_in):
         moves += [x for x in puzzle_in[i]]
-
         i += 1
 
+    move_dict = {
+        "<": (-1, 0),
+        ">": (1, 0),
+        "^": (0, -1),
+        "v": (0, 1),
+    }
+
     for move in moves:
-        if move == "<":
-            dx, dy = -1, 0
-        elif move == ">":
-            dx, dy = 1, 0
-        elif move == "^":
-            dx, dy = 0, -1
-        elif move == "v":
-            dx, dy = 0, 1
+        dx, dy = move_dict[move]
 
         if grid[y + dy][x + dx] == ".":
             grid[y + dy][x + dx] = "@"
@@ -145,8 +128,6 @@ def day15_pt2(puzzle_in):
                 elif grid[ny + dy][nx + dx] == ".":
                     boxes_to_move.add(next_box)
                     continue
-                else:
-                    print(grid[ny + dy][nx + dx], "Something went wrong 3")
 
             if not found_solve:
                 continue
@@ -168,23 +149,15 @@ def day15_pt2(puzzle_in):
                     grid[by][bx],
                     grid[by + dy][bx + dx],
                 )
-            grid[y + dy][x + dx], grid[y][x] = (
-                grid[y][x],
-                grid[y + dy][x + dx],
-            )
-
+            grid[y + dy][x + dx], grid[y][x] = "@", "."
             x += dx
             y += dy
-
-        else:
-            print(move, grid[y + dy][x + dx], "Something went wrong 2")
 
     total = 0
     for y in range(len(grid)):
         for x in range(len(grid[0])):
             if grid[y][x] == "[":
                 total += (100 * y) + x
-
     return total
 
 
@@ -194,5 +167,4 @@ if __name__ == "__main__":
 
     print("Starting")
     print(f"The solution to 15.1 is {day15_pt1(puzzle_in)}")
-
     print(f"The solution to 15.2 is {day15_pt2(puzzle_in)}")
